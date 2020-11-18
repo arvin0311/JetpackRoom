@@ -1,0 +1,57 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "1384f74806544daad0a4f279a326368c",
+    "entities": [
+      {
+        "tableName": "USER",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`USER_ID` INTEGER NOT NULL, `NAME` TEXT, `AGE` INTEGER NOT NULL, `ADDRESS` TEXT, `PHONE` TEXT, PRIMARY KEY(`USER_ID`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "USER_ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "NAME",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "age",
+            "columnName": "AGE",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "address",
+            "columnName": "ADDRESS",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "phone",
+            "columnName": "PHONE",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "USER_ID"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"1384f74806544daad0a4f279a326368c\")"
+    ]
+  }
+}
